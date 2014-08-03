@@ -1,0 +1,233 @@
+## toutes les lignes commencant par une # (sharp) est un commentaire
+# la ligne n'est pas donc pas prise en compte par le programme apt-mirror ou aru2l-mirror
+# capich ?
+## donc pas de distribution 8 ou 9 activee, c'est histoire d'en garder une trace.
+### NE PAS LES SUPPRIMER ###
+
+
+############# config ##################
+#
+set base_path	   /mirror
+#
+set mirror_path  $base_path/mirror
+set skel_path    $base_path/skel-debian
+set var_path     $base_path/var-debian
+set cleanscript $var_path/clean.sh
+# set defaultarch  <running host architecture>
+set defaultarch	   i386
+
+###########################################################
+#####pour lancer un script post install#####################
+#set postmirror_script $base_path/var/postmirror.sh#
+#set run_postmirror 1###############################
+############################################################
+
+set nthreads     20
+set _tilde 0
+#enlever car merde avec debian####set translation	1
+#enlever pareil###set upgrade_source_index 1
+#enlever pareil###set changelogs 1
+#
+############# end config ##############
+#################################################
+########################DEBIAN###################
+#################################################
+
+#########################
+########VIRTUALBOX#######
+#########################
+deb-amd64 http://download.virtualbox.org/virtualbox/debian wheezy contrib
+deb-i386 http://download.virtualbox.org/virtualbox/debian wheezy contrib
+deb-amd64 http://download.virtualbox.org/virtualbox/debian squeeze contrib non-free
+deb-i386 http://download.virtualbox.org/virtualbox/debian squeeze contrib non-free
+
+##########################
+##########wheezy##########
+##########################
+
+deb-i386  http://debian.proxad.net/debian wheezy main contrib non-free
+deb-amd64 http://debian.proxad.net/debian wheezy main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ wheezy-updates main contrib non-free
+deb-amd64 http://debian.proxad.net/debian/ wheezy-updates main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ wheezy-proposed-updates non-free contrib main
+deb-amd64 http://debian.proxad.net/debian/ wheezy-proposed-updates non-free contrib main
+
+deb-i386  http://debian.univ-reims.fr/debian-security/ wheezy/updates main contrib non-free
+deb-amd64 http://debian.univ-reims.fr/debian-security/ wheezy/updates main contrib non-free
+
+#deb-i386  http://www.deb-multimedia.org wheezy main non-free
+#deb-amd64 http://www.deb-multimedia.org wheezy main non-free
+
+deb-i386 http://debian.proxad.net/debian wheezy main/debian-installer
+deb-amd64 http://debian.proxad.net/debian wheezy main/debian-installer
+
+#################stable#####################
+####pour compatibilité sources.list##########
+#############################################
+deb-i386  http://debian.proxad.net/debian stable main contrib non-free
+deb-amd64 http://debian.proxad.net/debian stable main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ stable-updates main contrib non-free
+deb-amd64 http://debian.proxad.net/debian/ stable-updates main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ stable-proposed-updates non-free contrib main
+deb-amd64 http://debian.proxad.net/debian/ stable-proposed-updates non-free contrib main
+
+deb-i386  http://debian.univ-reims.fr/debian-security/ stable/updates main contrib non-free
+deb-amd64 http://debian.univ-reims.fr/debian-security/ stable/updates main contrib non-free
+
+#deb-i386  http://www.deb-multimedia.org stable main non-free
+#deb-amd64 http://www.deb-multimedia.org stable main non-free
+
+deb-i386 http://debian.proxad.net/debian stable main/debian-installer
+deb-amd64 http://debian.proxad.net/debian stable main/debian-installer
+
+
+#############################
+#######wheezy-backports#####
+#############################
+
+deb-i386 http://debian.proxad.net/debian wheezy-backports main contrib non-free
+deb-amd64 http://debian.proxad.net/debian wheezy-backports main contrib non-free
+
+##########################
+##########icedove a jour##A priori icedove est aussi dans experimental
+##########################
+deb-i386 http://debian.proxad.net/debian unstable main
+deb-amd64 http://debian.proxad.net/debian unstable main
+#######################
+#####iceweasel a jour##
+#######################
+deb-i386 http://debian.proxad.net/debian experimental main contrib non-free
+deb-amd64 http://debian.proxad.net/debian experimental main contrib non-free
+#deb-i386 http://mozilla.debian.net/ experimental iceweasel-beta
+#deb-amd64 http://mozilla.debian.net/ experimental iceweasel-beta
+
+##################################################################
+############squeeze version old-stable################################
+##################################################################
+
+##################
+#######squeeze####
+##################
+deb-i386 http://debian.proxad.net/debian squeeze main contrib non-free
+deb-amd64 http://debian.proxad.net/debian squeeze main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ squeeze-updates main contrib non-free
+deb-amd64 http://debian.proxad.net/debian/ squeeze-updates main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ squeeze-proposed-updates main contrib non-free
+deb-amd64 http://debian.proxad.net/debian/ squeeze-proposed-updates main contrib non-free
+
+
+deb-i386  http://debian.univ-reims.fr/debian-security/ squeeze/updates main contrib non-free
+deb-amd64 http://debian.univ-reims.fr/debian-security/ squeeze/updates main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian squeeze main/debian-installer
+deb-amd64 http://debian.proxad.net/debian squeeze main/debian-installer
+
+#######deb-multimedia squeeze####
+
+#deb-i386 http://www.deb-multimedia.org squeeze main non-free
+#deb-amd64 http://www.deb-multimedia.org squeeze main non-free
+
+
+#######################################################
+#########version testing (jessie) pour compatibilité sources.list
+#######################################################
+
+
+deb-i386 http://debian.proxad.net/debian jessie main contrib non-free
+deb-amd64 http://debian.proxad.net/debian jessie main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ jessie-updates main contrib non-free
+deb-amd64 http://debian.proxad.net/debian/ jessie-updates main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ jessie-proposed-updates main contrib non-free
+deb-amd64 http://debian.proxad.net/debian/ jessie-proposed-updates main contrib non-free
+
+
+deb-i386  http://debian.univ-reims.fr/debian-security/ jessie/updates main contrib non-free
+deb-amd64 http://debian.univ-reims.fr/debian-security/ jessie/updates main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian jessie main/debian-installer
+deb-amd64 http://debian.proxad.net/debian jessie main/debian-installer
+######################################################
+###############pour compabilité sources list##########
+######################################################
+deb-i386 http://debian.proxad.net/debian testing main contrib non-free
+deb-amd64 http://debian.proxad.net/debian testing main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ testing-updates main contrib non-free
+deb-amd64 http://debian.proxad.net/debian/ testing-updates main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian/ testing-proposed-updates main contrib non-free
+deb-amd64 http://debian.proxad.net/debian/ testing-proposed-updates main contrib non-free
+
+
+deb-i386  http://debian.univ-reims.fr/debian-security/ testing/updates main contrib non-free
+deb-amd64 http://debian.univ-reims.fr/debian-security/ testing/updates main contrib non-free
+
+deb-i386 http://debian.proxad.net/debian testing main/debian-installer
+deb-amd64 http://debian.proxad.net/debian testing main/debian-installer
+
+########################################
+#######deb-multimedia version stable####
+########################################
+
+#deb-i386 http://www.deb-multimedia.org stable main non-free
+#deb-amd64 http://www.deb-multimedia.org stable main non-free
+
+#deb-i386 http://www.deb-multimedia.org squeeze-backports main
+#deb-amd64 http://www.deb-multimedia.org squeeze-backports main
+
+#############################
+#######squeeze-backports#####
+#############################
+
+deb-i386 http://debian.proxad.net/debian-backports squeeze-backports main contrib non-free
+deb-amd64 http://debian.proxad.net/debian-backports squeeze-backports main contrib non-free
+
+
+###############################
+######mozilla-icedove-iceweasel
+###############################
+#deb-i386 http://mozilla.debian.net/ squeeze-backports iceweasel-release
+#deb-amd64 http://mozilla.debian.net/ squeeze-backports iceweasel-release
+
+#deb-i386 http://mozilla.debian.net/ squeeze-backports icedove-esr
+#deb-amd64 http://mozilla.debian.net/ squeeze-backports icedove-esr
+
+
+#########################################
+############SID-UNSTABLE#################
+#########################################
+
+deb-i386 http://debian.proxad.net/debian sid main contrib non-free
+deb-amd64 http://debian.proxad.net/debian sid main contrib non-free
+
+## sid multimedia
+#deb-i386 http://www.deb-multimedia.org/ sid main non-free
+#deb-amd64 http://www.deb-multimedia.org/ sid main non-free
+
+######################
+########unstable######
+######################
+
+deb-i386 http://debian.proxad.net/debian unstable main contrib non-free
+deb-amd64 http://debian.proxad.net/debian unstable main contrib non-free
+
+## sid multimedia
+#deb-i386 http://www.deb-multimedia.org/ unstable main non-free
+#deb-amd64 http://www.deb-multimedia.org/ unstable main non-free
+
+################################################
+#################################
+clean http://debian.proxad.net
+clean http://security.debian.org
+clean http://debian.univ-reims.fr
+clean http://www.deb-multimedia.org
+clean http://backports.debian.org
+clean  http://download.virtualbox.org
